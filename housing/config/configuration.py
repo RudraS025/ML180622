@@ -10,9 +10,6 @@ from housing.constant import *
 from housing.exception import HousingException
 
 
-
-
-
 class Configuration:
 
     def __init__(self,
