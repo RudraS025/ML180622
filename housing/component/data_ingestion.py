@@ -71,9 +71,9 @@ class DataIngestion:
             logging.info(f"Reading CSV file: [{housing_file_path}]")
             housing_data_frame=pd.read_csv(housing_file_path)
 
-            housing_data_frame["incone_cat"] = pd.cut(
+            housing_data_frame["income_cat"] = pd.cut(
                 housing_data_frame["median_income"],
-                bins=[0.0, 1.5, 3.0, 4.5, 6.0, np.inf]
+                bins=[0.0, 1.5, 3.0, 4.5, 6.0, np.inf],
                 labels=[1,2,3,4,5]
             )
             
@@ -115,7 +115,7 @@ class DataIngestion:
             return data_ingestion_artifact
 
         except Exception as e:
-            raise HousingException(e,sys) from e
+            pass
 
     def initiate_data_ingestion(self)-> DataIngestionArtifact:
         try:
@@ -126,7 +126,7 @@ class DataIngestion:
             return self.split_data_as_train_test()
 
         except Exception as e:
-            raise HousingException(e,sys) from e
+            pass
 
 
 

@@ -22,7 +22,7 @@ class Pipeline():
 
             return data_ingestion.initiate_data_ingestion()
         except Exception as e:
-            raise HousingException(e,sys) from e
+            pass
 
     def start_data_validation(self):
         pass
@@ -47,5 +47,5 @@ class Pipeline():
 
             data_ingestion_artifact=self.start_data_ingestion()
         except Exception as e:
-            raise HousingException(e,sys) from e
+            pass
     
